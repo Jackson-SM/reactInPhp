@@ -1,0 +1,95 @@
+html,body {
+  height: 100%;
+  background: rgb(9, 9, 24);
+}
+
+.register {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_content {
+  background: rgb(29, 26, 33);
+  max-width: 600px;
+  border-radius: 5px;
+  width: 100%;
+  max-height: calc(100% - 200px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px 2px rgb(80, 80, 80);
+}
+
+.form {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  color: white;
+  align-items: center;
+}
+
+.form .input_content {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width:100%;
+}
+
+.form input {
+  padding: 13px 40px 13px 13px;
+  border-radius: 3px;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+}
+
+.input_content label {
+  color: #c5c5c5;
+  font-family: "Quicksand", sans-serif;
+}
+
+.logo {
+  height:100%;
+  width: 50px;
+}
+
+.logoNavbar {
+  display: flex;
+  align-items: center;
+}
+
+.textLogo {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+}
+
+.btn_register {
+  width: calc(100% - 200px);
+  height: 50px;
+  border-radius: 3px;
+  outline: none;
+  border:none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  background: rgb(0, 123, 255);
+  transition: all ease 200ms;
+}
+
+.btn_register:hover {
+  background: rgb(0, 89, 255);
+}
+
+.btn_register:disabled {
+  cursor: default;
+  background: rgb(121, 168, 255);
+}
