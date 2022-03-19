@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInite52d8a41e31b9e23a36a3582b77ea0ab
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'C' => 
         array (
-            'Pecee\\' => 6,
+            'CoffeeCode\\Router\\' => 18,
         ),
         'A' => 
         array (
@@ -18,9 +18,9 @@ class ComposerStaticInite52d8a41e31b9e23a36a3582b77ea0ab
     );
 
     public static $prefixDirsPsr4 = array (
-        'Pecee\\' => 
+        'CoffeeCode\\Router\\' => 
         array (
-            0 => __DIR__ . '/..' . '/pecee/simple-router/src/Pecee',
+            0 => __DIR__ . '/..' . '/coffeecode/router/src',
         ),
         'App\\' => 
         array (

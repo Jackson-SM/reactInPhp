@@ -1,10 +1,12 @@
 <?php
 
+namespace App\Model;
+
 class User {
   private $email,$name,$password;
 
   public function setEmail($email) {
-    $this->email = $email;
+    $this->email = filter_var($email,FILTER_SANITIZE_EMAIL);
   }
 
   public function getEmail(){

@@ -1,38 +1,29 @@
 {
     "packages": [
         {
-            "name": "pecee/simple-router",
-            "version": "4.3.7.2",
-            "version_normalized": "4.3.7.2",
+            "name": "coffeecode/router",
+            "version": "1.0.8",
+            "version_normalized": "1.0.8.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/skipperbent/simple-php-router.git",
-                "reference": "032a2ae7e0e2d876599758f85b61bc965a63ea7c"
+                "url": "https://github.com/robsonvleite/router.git",
+                "reference": "29f73e12351a116e9bbb3f695595777a09e18077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/skipperbent/simple-php-router/zipball/032a2ae7e0e2d876599758f85b61bc965a63ea7c",
-                "reference": "032a2ae7e0e2d876599758f85b61bc965a63ea7c",
+                "url": "https://api.github.com/repos/robsonvleite/router/zipball/29f73e12351a116e9bbb3f695595777a09e18077",
+                "reference": "29f73e12351a116e9bbb3f695595777a09e18077",
                 "shasum": ""
             },
             "require": {
-                "ext-json": "*",
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
-            "require-dev": {
-                "mockery/mockery": "^1",
-                "phpstan/phpstan": "^0",
-                "phpstan/phpstan-deprecation-rules": "^0",
-                "phpstan/phpstan-phpunit": "^0",
-                "phpstan/phpstan-strict-rules": "^0",
-                "phpunit/phpunit": "^7"
-            },
-            "time": "2021-07-17T23:45:36+00:00",
+            "time": "2021-03-21T18:45:16+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Pecee\\": "src/Pecee/"
+                    "CoffeeCode\\Router\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -41,30 +32,25 @@
             ],
             "authors": [
                 {
-                    "name": "Simon Sessingø",
-                    "email": "simon.sessingoe@gmail.com"
+                    "name": "Robson V. Leite",
+                    "email": "cursos@upinside.com.br",
+                    "role": "Developer"
                 }
             ],
-            "description": "Simple, fast PHP router that is easy to get integrated and in almost any project. Heavily inspired by the Laravel router.",
+            "description": "A classic CoffeeCode Router is easy, fast and extremely uncomplicated. Create and manage your routes in minutes!",
+            "homepage": "http://www.upinside.com.br",
             "keywords": [
-                "framework",
-                "input-handler",
-                "laravel",
-                "pecee",
-                "php",
-                "request-handler",
+                "Coffeecode",
                 "route",
                 "router",
-                "routing",
-                "routing-engine",
-                "simple-php-router",
-                "url-handling"
+                "routes",
+                "upinside"
             ],
             "support": {
-                "issues": "https://github.com/skipperbent/simple-php-router/issues",
-                "source": "https://github.com/skipperbent/simple-php-router/issues"
+                "issues": "https://github.com/robsonvleite/router/issues",
+                "source": "https://github.com/robsonvleite/router/tree/1.0.8"
             },
-            "install-path": "../pecee/simple-router"
+            "install-path": "../coffeecode/router"
         }
     ],
     "dev": true,

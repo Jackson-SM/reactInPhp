@@ -15,7 +15,7 @@
         <img src="/Assets/img/logo512.png" class="logo">
         <h1 class="textLogo">React Form Php</h1>
       </div>
-      <form action="" class="form">
+      <form action="/App/Controller/register.php" method="POST" class="form">
         <div class="input_content">
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="Email">
@@ -28,7 +28,7 @@
           <label for="password">Password</label>
           <input type="password" name="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn_register">Create Account</button>
+        <button type="submit" name="btn_register" class="btn_register">Create Account</button>
       </form>
     </div>  
   </div>

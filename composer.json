@@ -4,7 +4,10 @@
       "App\\": "App/"
     }
   },
+  "files": [
+    "App/Config/config.php"
+  ],
   "require": {
-    "pecee/simple-router": "4.3.7.2"
+    "coffeecode/router": "^1.0"
   }
 }
