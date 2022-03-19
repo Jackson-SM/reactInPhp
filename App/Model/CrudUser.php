@@ -53,7 +53,6 @@ class CrudUser {
       if($this->verifyPassword($user->getPassword(),$data[0]['password'])){
         $_SESSION['logged'] = true;
         $_SESSION['id_session'] = $data[0]['id'];
-        header('location: /');
       }else{
         throw new \Exception("Senha incorreta", 3);
       }

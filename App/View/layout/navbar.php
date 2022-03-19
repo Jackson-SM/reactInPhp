@@ -9,7 +9,7 @@
     </li>
   </ul>
   <div class="account">
-    <a href="/App/View/pages/login.php"><i class='bx bx-log-in'></i>Login</a>
-    <a href="/App/View/pages/register.php"><i class='bx bxs-user-plus'></i>Register</a>
+    <a href="/login"><i class='bx bx-log-in'></i>Login</a>
+    <a href="/register"><i class='bx bxs-user-plus'></i>Register</a>
   </div>
 </nav>

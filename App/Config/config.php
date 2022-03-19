@@ -1,2 +1,3 @@
 <?php
-session_start();
+
+define("URL_BASE", $_SERVER['SERVER_NAME']);
