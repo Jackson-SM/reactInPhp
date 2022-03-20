@@ -8,17 +8,27 @@ use App\Model\User;
 session_start();
 
 class Router {
+
+  public function index($data){
+    (new Controller())->viewTwig('templates/Index/index.twig.html', [
+      'title' => 'Index'
+    ]);
+  }
+
   public function home($data){
-    (new Controller())->viewTwig('templates/Home/home.twig', [
+    $crudUser = new CrudUser();
+    $user = false;
+    if(isset($_SESSION['id_session'])){
+      $user = $crudUser->getUser($_SESSION['id_session']);
+    }
+    (new Controller())->viewTwig('templates/Home/home.twig.html', [
       'title' => "Home",
-      'sessionlog' => $_SESSION['logged'],
-      'sessionid' => $_SESSION['id_session'],
-      'user' => (new CrudUser())->getUser($_SESSION['id_session'])
+      'user' => $user
     ]);
   }
 
   public function login($data){
-    (new Controller())->viewTwig("templates/Login/login.twig", [
+    (new Controller())->viewTwig("templates/Login/login.twig.html", [
       'title' => "Login"
     ]);
   }
@@ -28,13 +38,16 @@ class Router {
     $user->setPassword($data['password']);
 
     $crudUser = new CrudUser();
-    $crudUser->login($user);
-
-    header('location: /');
+    try {
+      $crudUser->login($user);
+      header('location: /home');
+    }catch(\Exception $e){
+      echo $e->getMessage();
+    }
   }
 
   public function register($data){
-    (new Controller())->viewTwig("templates/Register/register.twig", ['title' => "Register"]);
+    (new Controller())->viewTwig("templates/Register/register.twig.html", ['title' => "Register"]);
   }
 
   public function registerPost($data){
@@ -46,6 +59,11 @@ class Router {
     $crudUser = new CrudUser();
 
     $crudUser->create($user);
+  }
+
+  public function logout($data){
+    $crudUser = new CrudUser();
+    $crudUser->logout();
   }
 
   public function error($data){

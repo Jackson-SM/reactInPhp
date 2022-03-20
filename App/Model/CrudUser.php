@@ -62,21 +62,22 @@ class CrudUser {
   }
 
   public function logout(){
-    session_start();
     session_unset();
     session_destroy();
   }
 
   public function getUser($id){
-    $sql = "SELECT * FROM users WHERE id = :id";
+    if(isset($id)){
+      $sql = "SELECT * FROM users WHERE id = :id";
 
-    $stmt = Connect::getConnect()->prepare($sql);
+      $stmt = Connect::getConnect()->prepare($sql);
 
-    $stmt->bindValue(':id', $id);
+      $stmt->bindValue(':id', $id);
 
-    $stmt->execute();
+      $stmt->execute();
 
-    $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-    return $data[0];
+      $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+      return $data[0];
+    }
   }
 }

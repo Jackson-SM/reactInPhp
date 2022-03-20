@@ -4,7 +4,7 @@ require_once __DIR__."/../../vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
 
-$router = new Router(projectUrl: URL_BASE);
+$router = new Router(projectUrl: "http://localhost/php/reactinphp");
 
 /*
 * Controllers in App Controllers
@@ -22,21 +22,25 @@ $router->get("/", handler: "Router:index");
 $router->group(group: "home");
 $router->get("/", handler: "Router:home");
 
-$router->group(group: 'login');
-$router->get("/", handler: "Router:login");
-$router->post("/", handler: "Router:loginPost");
+$router->group(group: 'user');
+$router->get("/login", handler: "Router:login");
+$router->post("/login", handler: "Router:loginPost");
 
-$router->group(group: 'register');
-$router->get("/", handler: "Router:register");
-$router->post("/", handler: "Router:registerPost");
+$router->get("/register", handler: "Router:register");
+$router->post("/register", handler: "Router:registerPost");
 
-$router->group(group: 'hometwig');
-$router->get("/", handler: "Router:homeTwig");
-
+$router->group(group: 'logout');
+$router->get('/', handler: "Router:logout");
 /*
 * ERRORS
 */
+$router->group(group: "ooops");
+$router->get("/{errcode}",handler: "Router:error");
 
 $router->dispatch();
+
+if($router->error()){
+  $router->redirect("/ooops/{$router->error()}");
+}
 
 ?>

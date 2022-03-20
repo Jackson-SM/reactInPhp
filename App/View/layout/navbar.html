@@ -1,19 +1,43 @@
 <nav class="navbar">
   <div class="logoNavbar">
-    <img src="Assets/img/logo512.png" class="logo">
-    <h1 class="textLogo">React</h1>
+    {%if user %}
+    <a href="" class="menu"><i class='bx bx-menu'></i></a>
+    {%endif %}
+    <div class="logoImgTitle">
+      <img src="Assets/img/logo512.png" class="logo">
+      <h1 class="textLogo">React</h1>
+    </div>
   </div>
   <ul class="listLink">
     <li>
-      <a href=""><i class='bx bxs-home'></i>Home</a>
+      <a href="/home"><i class='bx bxs-home'></i>Home</a>
     </li>
   </ul>
   {% if not user%}
   <div class="account">
-    <a href="/login"><i class='bx bx-log-in'></i>Login</a>
-    <a href="/register"><i class='bx bxs-user-plus'></i>Register</a>
+    <a href="/user/login" class="btn-log"><i class='bx bxs-user'></i>Login</a>
+    <a href="/user/register" class="btn-reg"><i class='bx bxs-user-plus'></i>Register</a>
   </div>
   {% else %}
-  {{user['email']}}
+  <div class="user">
+    <a href="" class="user_dropdown">
+      <div class="profile_user">
+        <img src="/Assets/img/perfil.jpg" alt="">
+      </div>
+    </a>
+    <div class="options_user">
+      <div class="top">
+        <h1>{{user['name']}}</h1>
+        <span>{{user['email']}}</span>
+      </div>
+      <ul>
+        <li><a href=""><i class='bx bxs-user-circle'></i>My Profile</a></li>
+        <li><a href=""><i class='bx bxs-edit-alt'></i>Edit Profile</a></li>
+        <li><a href=""><i class='bx bxs-inbox'></i>Inbox</a></li>
+        <li><a href=""><i class='bx bxs-cog'></i>Settings</a></li>
+        <li><a href=""><i class='bx bx-log-out'></i>Logout</a></li>
+      </ul>
+    </div>
+  </div>
   {% endif%}
 </nav>

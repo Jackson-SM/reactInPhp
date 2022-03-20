@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="/Assets/css/views/form.css">
   <title>Register</title>
 </head>
+
 <body>
   <div class="register">
     <div class="form_content">
@@ -15,7 +17,7 @@
         <img src="/Assets/img/logo512.png" class="logo">
         <h1 class="textLogo">React Form Php</h1>
       </div>
-      <form action="/App/Controllers/register.php" method="POST" class="form">
+      <form action="/user/register" method="POST" class="form">
         <div class="input_content">
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="Email">
@@ -30,7 +32,8 @@
         </div>
         <button type="submit" name="btn_register" class="btn_register">Create Account</button>
       </form>
-    </div>  
+    </div>
   </div>
 </body>
+
 </html>
