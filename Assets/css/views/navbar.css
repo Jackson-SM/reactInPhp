@@ -52,7 +52,7 @@
   font-size: 13px;
 }
 .account .btn-log:hover {   
-  color: #0486ff;
+  color: #4696ff;
 }
 
 .account .btn-log i {
@@ -60,9 +60,9 @@
 }
 
 .account .btn-reg {
-  font-size: 15px;
+  font-size: 14px;
   border: 2px solid rgb(0, 110, 255);
-  padding: 8px 10px;
+  padding: 6px 15px;
   border-radius: 3px;
 }
 

@@ -5,18 +5,21 @@
     {%endif %}
     <div class="logoImgTitle">
       <img src="Assets/img/logo512.png" class="logo">
-      <h1 class="textLogo">React</h1>
+      <h1 class="textLogo">Network</h1>
     </div>
   </div>
   <ul class="listLink">
     <li>
       <a href="/home"><i class='bx bxs-home'></i>Home</a>
     </li>
+    <li>
+      <a href="/home"><i class='bx bxl-git'></i>Git</a>
+    </li>
   </ul>
   {% if not user%}
   <div class="account">
     <a href="/user/login" class="btn-log"><i class='bx bxs-user'></i>Login</a>
-    <a href="/user/register" class="btn-reg"><i class='bx bxs-user-plus'></i>Register</a>
+    <a href="/user/register" class="btn-reg"></i>Create Account</a>
   </div>
   {% else %}
   <div class="user">
@@ -35,7 +38,7 @@
         <li><a href=""><i class='bx bxs-edit-alt'></i>Edit Profile</a></li>
         <li><a href=""><i class='bx bxs-inbox'></i>Inbox</a></li>
         <li><a href=""><i class='bx bxs-cog'></i>Settings</a></li>
-        <li><a href=""><i class='bx bx-log-out'></i>Logout</a></li>
+        <li><a href="/logout"><i class='bx bx-log-out'></i>Logout</a></li>
       </ul>
     </div>
   </div>

@@ -9,6 +9,10 @@ session_start();
 
 class Router {
 
+  public function __construct($router) {
+    $this->router = $router;
+  }
+
   public function index($data){
     (new Controller())->viewTwig('templates/Index/index.twig.html', [
       'title' => 'Index'
@@ -16,14 +20,8 @@ class Router {
   }
 
   public function home($data){
-    $crudUser = new CrudUser();
-    $user = false;
-    if(isset($_SESSION['id_session'])){
-      $user = $crudUser->getUser($_SESSION['id_session']);
-    }
     (new Controller())->viewTwig('templates/Home/home.twig.html', [
-      'title' => "Home",
-      'user' => $user
+      'title' => "Home"
     ]);
   }
 
@@ -64,10 +62,6 @@ class Router {
   public function logout($data){
     $crudUser = new CrudUser();
     $crudUser->logout();
-  }
-
-  public function error($data){
-    echo "<h1>Erro: {$data['errcode']}</h1>";
-    var_dump($data);
+    header('location: /');
   }
 }
