@@ -8,8 +8,12 @@
       <a href=""><i class='bx bxs-home'></i>Home</a>
     </li>
   </ul>
+  {% if not user%}
   <div class="account">
     <a href="/login"><i class='bx bx-log-in'></i>Login</a>
     <a href="/register"><i class='bx bxs-user-plus'></i>Register</a>
   </div>
+  {% else %}
+  {{user['email']}}
+  {% endif%}
 </nav>

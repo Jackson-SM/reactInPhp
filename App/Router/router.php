@@ -17,8 +17,10 @@ $router->namespace(namespace: "App\Core");
 *home
 */
 $router->group(group: null);
-$router->get("/", handler: "Router:home");
+$router->get("/", handler: "Router:index");
 
+$router->group(group: "home");
+$router->get("/", handler: "Router:home");
 
 $router->group(group: 'login');
 $router->get("/", handler: "Router:login");

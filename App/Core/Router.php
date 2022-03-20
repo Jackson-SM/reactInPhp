@@ -9,7 +9,7 @@ session_start();
 
 class Router {
   public function home($data){
-    (new Controller())->viewTwig('templates/Home/home.twig.html', [
+    (new Controller())->viewTwig('templates/Home/home.twig', [
       'title' => "Home",
       'sessionlog' => $_SESSION['logged'],
       'sessionid' => $_SESSION['id_session'],
