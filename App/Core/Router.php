@@ -2,21 +2,50 @@
 
 namespace App\Core;
 
+use App\Model\CrudUser;
+use App\Model\User;
+
+session_start();
+
 class Router {
   public function home($data){
-    require __DIR__."/../View/templates/Home/home.twig.html";
+    (new Controller())->viewTwig('templates/Home/home.twig.html', [
+      'title' => "Home",
+      'sessionlog' => $_SESSION['logged'],
+      'sessionid' => $_SESSION['id_session'],
+      'user' => (new CrudUser())->getUser($_SESSION['id_session'])
+    ]);
   }
 
   public function login($data){
-    require __DIR__."/../View/templates/login.html";
+    (new Controller())->viewTwig("templates/Login/login.twig", [
+      'title' => "Login"
+    ]);
+  }
+  public function loginPost($data){
+    $user = new User();
+    $user->setEmail($data['email']);
+    $user->setPassword($data['password']);
+
+    $crudUser = new CrudUser();
+    $crudUser->login($user);
+
+    header('location: /');
   }
 
   public function register($data){
-    require __DIR__."/../View/templates/register.html";
+    (new Controller())->viewTwig("templates/Register/register.twig", ['title' => "Register"]);
   }
 
-  public function homeTwig($data) {
-    require __DIR__."/../../index.php";
+  public function registerPost($data){
+    $user = new User();
+    $user->setEmail($data['email']);
+    $user->setName($data['name']);
+    $user->setPassword($data['password']);
+
+    $crudUser = new CrudUser();
+
+    $crudUser->create($user);
   }
 
   public function error($data){

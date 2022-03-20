@@ -66,4 +66,17 @@ class CrudUser {
     session_unset();
     session_destroy();
   }
+
+  public function getUser($id){
+    $sql = "SELECT * FROM users WHERE id = :id";
+
+    $stmt = Connect::getConnect()->prepare($sql);
+
+    $stmt->bindValue(':id', $id);
+
+    $stmt->execute();
+
+    $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $data[0];
+  }
 }

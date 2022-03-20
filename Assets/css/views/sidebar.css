@@ -1,0 +1,97 @@
+.menu {
+  text-decoration: none;
+  color: #e1e1e1;
+  font-size: 35px;
+}
+
+.sidebar {
+  width: 200px;
+  position: fixed;
+  background: rgb(41,41,41);
+  height:100%;
+  margin-top: 30px;
+  color: #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  transition: all ease 400ms;
+}
+
+.sidebar.open {
+  left: -155px;
+}
+
+.sidebar.open .items .item .link {
+  justify-content: flex-end;
+}
+
+.sidebar.open .items .item .link span {
+  transition: all ease 300ms;
+  display: none;
+}
+
+.sidebar.open .profile h3 {
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease 200ms;
+}
+/* sidebar open end  */
+
+.sidebar .items .item .link span {
+  opacity: 1;
+}
+
+.sidebar .profile {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar .profile h3 {
+  font-size: 13px;
+  opacity: 1;
+}
+
+.sidebar .profile .profile_img {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+}
+
+.sidebar .profile .profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar .items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar .items .item .link {
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 40px;
+}
+
+.sidebar .items .item .link i {
+  font-size: 25px;
+}
+
+.sidebar .items .item .link:hover {
+  background: rgb(58, 58, 58);
+}
