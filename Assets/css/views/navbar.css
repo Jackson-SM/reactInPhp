@@ -182,11 +182,10 @@ List link
   opacity: 0;
   pointer-events: none;
   transition: all ease 200ms;
-  transform: translateX(-55%);
-  border-radius: 3px;
   width: auto;
   top: 80%;
-  left: -100%;
+  background: rgb(50,50,50);
+  right: 0;
 }
 
 .options_user .top {
@@ -194,8 +193,8 @@ List link
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 2px solid #b3b3b3;
-  padding: 10px 20px;
+  border-bottom: 2px solid #484848;
+  padding: 10px 35px;
 
   z-index: 1;
 }
@@ -206,23 +205,24 @@ List link
   position: absolute;
 
   top: 0;
-  left: calc(100% - 20px);
+  right: 18px;
 
-  transform: translateY(-60%);
+  transform: translateY(-100%);
 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #ffffff;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(77, 77, 77);
 
   z-index: -1;
 }
 .options_user .top h1 {
-  font-size: 22px;
-  color: #4f4f4f;
+  font-size: 30px;
+  color: #e1e1e1;
+  white-space: nowrap;
 }
 .options_user .top span {
   font-size: 12px;
-  color: #4f4f4f;
+  color: #a7a7a7;
 }
 
 .user_dropdown ~ .options_user.show {
@@ -234,21 +234,64 @@ List link
 .options_user ul {
   list-style: none;
   width: 100%;
-  overflow: hidden;
 }
 
 .options_user ul li {
   width: 100%;
+  position: relative;
+}
+
+.options_user ul li::before, .options_user ul li.active::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  background: rgb(119, 0, 255);
+
+  width:3px;
+  height: 100%;
+
+  pointer-events: none;
+
+  transition: all ease 200ms;
+
+  opacity: 0;
+
+}
+
+.options_user ul li.active::before {
+  background: rgb(0, 89, 255);
+  opacity: 1;
+}
+
+.options_user ul li:hover::before {
+  opacity: 1;
 }
 
 .options_user ul li a {
   text-decoration: none;
-  color: rgb(34, 34, 34);
   width: 100%;
-  display: block;
-  padding: 8px 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #e1e1e1;
+}
+
+.options_user ul li a i {
+  font-size: 22px;
+  padding-left: 10px;
+  color: #e1e1e1;
 }
 
 .options_user ul li a:hover {
-  background: #e1e1e1;
+  background: rgb(58,58,58);
+}
+
+.group_options_user {
+  border-top: 2px solid #484848;
+  padding: 5px 0 0 0;
 }

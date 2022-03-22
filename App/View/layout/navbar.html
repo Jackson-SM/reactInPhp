@@ -15,6 +15,9 @@
     <li>
       <a href="/home"><i class='bx bxl-git'></i>Git</a>
     </li>
+    <li>
+      <a href="/home"><i class='bx bx-world'></i>Social</a>
+    </li>
   </ul>
   {% if not user%}
   <div class="account">
@@ -35,10 +38,12 @@
       </div>
       <ul>
         <li><a href=""><i class='bx bxs-user-circle'></i>My Profile</a></li>
-        <li><a href=""><i class='bx bxs-edit-alt'></i>Edit Profile</a></li>
+        <li class="active"><a href=""><i class='bx bxs-edit-alt'></i>Edit Profile</a></li>
         <li><a href=""><i class='bx bxs-inbox'></i>Inbox</a></li>
         <li><a href=""><i class='bx bxs-cog'></i>Settings</a></li>
-        <li><a href="/logout"><i class='bx bx-log-out'></i>Logout</a></li>
+        <div class="group_options_user">
+          <li><a href="/logout"><i class='bx bx-log-out'></i>Logout</a></li>
+        </div>
       </ul>
     </div>
   </div>

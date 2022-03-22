@@ -6,9 +6,15 @@
 </head>
 
 <body>
+  {% if not user %}
   {% include 'layout/navbar.html'%}
   {% include 'layout/main.html' %}
   {% include 'layout/scripts.html' %}
+  {% else %}
+  {% block javascript %}
+  <script src="App/View/layout/functions/logged.js"></script>
+  {% endblock %}
+  {% endif %}
 </body>
 
 </html>
