@@ -2,7 +2,7 @@
 
 namespace App\Core;
 
-use App\Model\CrudUser;
+use App\Controllers\UserController;
 use App\Model\User;
 
 session_start();
@@ -35,9 +35,9 @@ class Router {
     $user->setEmail($data['email']);
     $user->setPassword($data['password']);
 
-    $crudUser = new CrudUser();
+    $userController = new UserController();
     try {
-      $crudUser->login($user);
+      $userController->login($user);
       header('location: /');
     }catch(\Exception $e){
       echo $e->getMessage();
@@ -54,14 +54,14 @@ class Router {
     $user->setName($data['name']);
     $user->setPassword($data['password']);
 
-    $crudUser = new CrudUser();
+    $userController = new UserController();
 
-    $crudUser->create($user);
+    $userController->create($user);
   }
 
   public function logout($data){
-    $crudUser = new CrudUser();
-    $crudUser->logout();
+    $userController = new UserController();
+    $userController->logout();
     header('location: /');
   }
 

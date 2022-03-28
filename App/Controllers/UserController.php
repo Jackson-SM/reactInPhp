@@ -1,19 +1,23 @@
 <?php
 
-namespace App\Model;
+namespace App\Controllers;
 
-class CrudUser {
+use App\Model\User;
+use App\Model\Connect;
+
+class UserController {
   public function create(User $user) {
     if($this->verifyEmailExists($user) > 0){
       throw new \Exception("User already exists", 1);
     }else{
-      $sql = "INSERT INTO users (email,name,password) VALUES (:email,:name,:password)";
+      $sql = "INSERT INTO users (email,name,password,img_profile) VALUES (:email,:name,:password,:img_profile)";
 
       $stmt = Connect::getConnect()->prepare($sql);
   
       $stmt->bindValue(':email', $user->getEmail());
       $stmt->bindValue(':name', $user->getName());
       $stmt->bindValue(':password', password_hash($user->getPassword(),PASSWORD_BCRYPT));
+      $stmt->bindValue(':img_profile', $this->UploadImage($_FILES));
       
       $stmt->execute();  
     }
@@ -79,5 +83,25 @@ class CrudUser {
       $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
       return $data[0];
     }
+  }
+
+  public function UploadImage(array $imgInfo){
+    $extensionList = [
+      "jpg" => "jpg",
+      "png" => "png",
+      "jpeg" => "jpeg"
+    ];
+
+    $extension = pathinfo($imgInfo['file']['name'], PATHINFO_EXTENSION);
+    $newName = uniqid().'.'.$extension;
+    if(in_array($extension,$extensionList)){
+      if(!is_dir(DIRECTORY_USER)){
+        mkdir(DIRECTORY_USER, 0777, true);
+      }
+      move_uploaded_file($imgInfo['file']['tmp_name'], DIRECTORY_USER.$newName);
+    }else{
+      echo "Formato não permitido";
+    }
+    return $newName;
   }
 }

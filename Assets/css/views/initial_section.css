@@ -6,6 +6,7 @@
   background-position: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .wrapper_initial {

@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Core;
-use App\Model\CrudUser;
+use App\Controllers\UserController;
 
 class Controller {
 
   public function verifyLogged(){
-    $crudUser = new CrudUser();
+    $userController = new UserController();
     $user = false;
     if(isset($_SESSION['id_session'])){
-      $user = $crudUser->getUser($_SESSION['id_session']);
+      $user = $userController->getUser($_SESSION['id_session']);
     }
     return $user;
   }
@@ -23,9 +23,5 @@ class Controller {
       ...$params,
       "user" => $this->verifyLogged()
     ]);
-  }
-
-  public function redirect($url){
-    header(`location: $url`);
   }
 }
