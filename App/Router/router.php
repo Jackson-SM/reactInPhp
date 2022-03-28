@@ -18,10 +18,10 @@ $router->namespace(namespace: "App\Core");
 *home
 */
 $router->group(group: null);
-$router->get("/", handler: "Router:index");
-
-$router->group(group: "home");
 $router->get("/", handler: "Router:home");
+
+$router->group(group: "social");
+$router->get("/", handler: "Router:social");
 
 $router->group(group: 'user');
 $router->get("/login", handler: "Router:login");
@@ -35,8 +35,15 @@ $router->get('/', handler: "Router:logout");
 /*
 * ERRORS
 */
-$router->group(group:null);
+
+$router->group(group: "ooops");
+$router->get("/{errcode}", handler: "Router:error");
 
 $router->dispatch();
+
+
+if($router->error()){
+  $router->redirect("ooops/{$router->error()}");
+}
 
 ?>

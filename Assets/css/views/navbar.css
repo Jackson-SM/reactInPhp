@@ -249,7 +249,7 @@ List link
   top: 0;
   right: 0;
 
-  background: rgb(119, 0, 255);
+  background: rgba(119, 0, 255, 0.741);
 
   width:3px;
   height: 100%;
@@ -263,7 +263,7 @@ List link
 }
 
 .options_user ul li.active::before {
-  background: rgb(0, 89, 255);
+  background: rgba(0, 89, 255, 0.672);
   opacity: 1;
 }
 

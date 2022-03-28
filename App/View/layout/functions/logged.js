@@ -1,1 +1,0 @@
-window.location = 'http://reactinphp.com/home';

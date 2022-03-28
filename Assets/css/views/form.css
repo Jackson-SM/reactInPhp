@@ -4,19 +4,18 @@ html,body {
 }
 
 .register {
-  height:100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .form_content {
   background: rgb(29, 26, 33);
-  max-width: 600px;
   border-radius: 5px;
   width: 100%;
-  max-height: calc(100% - 200px);
-  height: 100%;
+  max-width: 600px;
+  max-height: calc(100% - 100px);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -48,6 +47,21 @@ html,body {
   border-radius: 3px;
   border: none;
   font-family: "Quicksand", sans-serif;
+}
+
+.form input[type="file"] {
+  display: none;
+}
+
+.sendFile {
+  background: rgba(38, 38, 38, 0.404);
+  padding: 10px 20px;
+  align-self: center;
+  border: 2px solid rgba(38, 38, 38, 0.671);
+  cursor: pointer;
+}
+#archiveName {
+  align-self: center;
 }
 
 .input_content label {

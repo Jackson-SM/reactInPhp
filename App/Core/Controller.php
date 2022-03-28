@@ -5,16 +5,6 @@ use App\Model\CrudUser;
 
 class Controller {
 
-  public function verifyLoggedPage(){
-    $logged = false;
-    if(!isset($_SESSION['logged'])){
-      return $logged;
-    }else{
-      $logged = true;
-      return $logged;
-    }
-  }
-
   public function verifyLogged(){
     $crudUser = new CrudUser();
     $user = false;

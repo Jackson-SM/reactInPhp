@@ -13,15 +13,15 @@ class Router {
     $this->router = $router;
   }
 
-  public function index($data){
-    (new Controller())->viewTwig('templates/Index/index.twig.html', [
-      'title' => 'Index'
+  public function home($data){
+    (new Controller())->viewTwig('templates/Home/home.twig.html', [
+      'title' => 'Home'
     ]);
   }
 
-  public function home($data){
-    (new Controller())->viewTwig('templates/Home/home.twig.html', [
-      'title' => "Home"
+  public function social($data){
+    (new Controller())->viewTwig('templates/Social/social.twig.html', [
+      'title' => "Social"
     ]);
   }
 
@@ -38,7 +38,7 @@ class Router {
     $crudUser = new CrudUser();
     try {
       $crudUser->login($user);
-      header('location: /home');
+      header('location: /');
     }catch(\Exception $e){
       echo $e->getMessage();
     }
@@ -63,5 +63,9 @@ class Router {
     $crudUser = new CrudUser();
     $crudUser->logout();
     header('location: /');
+  }
+
+  public function error($data){
+    echo $data['errcode'];
   }
 }
