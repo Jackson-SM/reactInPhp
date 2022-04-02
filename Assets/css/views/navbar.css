@@ -155,8 +155,8 @@ List link
   color: white;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 5px;
-  padding: 5px;
+  position: relative;
+  width: 100%;
 }
 
 .user {
@@ -166,13 +166,15 @@ List link
 }
 
 .user .profile_user {
-  height: 100%;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .user .profile_user img {
   height:100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -205,7 +207,7 @@ List link
   position: absolute;
 
   top: 0;
-  right: 18px;
+  right: 16.5px;
 
   transform: translateY(-100%);
 
@@ -279,10 +281,11 @@ List link
   align-items: center;
   gap: 1rem;
   color: #e1e1e1;
+  font-size: 13px;
 }
 
 .options_user ul li a i {
-  font-size: 22px;
+  font-size: 20px;
   padding-left: 10px;
   color: #e1e1e1;
 }

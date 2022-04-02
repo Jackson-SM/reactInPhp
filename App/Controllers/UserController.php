@@ -81,7 +81,11 @@ class UserController {
       $stmt->execute();
 
       $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-      return $data[0];
+      if(!empty($data[0])){
+        return $data[0];
+      }else{
+        return false;
+      }
     }
   }
 
