@@ -84,7 +84,7 @@ html,body {
   color: white;
 }
 
-.btn_register {
+.btn {
   width: calc(100% - 200px);
   height: 50px;
   border-radius: 3px;
@@ -99,11 +99,15 @@ html,body {
   transition: all ease 200ms;
 }
 
-.btn_register:hover {
+.btn:hover {
   background: rgb(0, 89, 255);
 }
 
-.btn_register:disabled {
+.btn:disabled {
   cursor: default;
   background: rgb(121, 168, 255);
+}
+
+#content {
+  resize: none;
 }

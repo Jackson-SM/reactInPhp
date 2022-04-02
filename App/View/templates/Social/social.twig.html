@@ -7,14 +7,17 @@
 
 <body>
   {%if user %}
+  {% include 'layout/modal.html' %}
   {% include 'layout/navbar.html' %}
   {% include 'layout/sidebar.html' %}
+  {% include 'layout/socialMain.html' %}
   {% include 'layout/scripts.html' %}
   {% else %}
   {% block javascript %}
   <script src="/Assets/js/notLogged.js"></script>
   {% endblock %}
   {% endif %}
+
 </body>
 
 </html>

@@ -1,8 +1,6 @@
 const inputFile = document.querySelector('#file');
 const archiveName = document.querySelector('#archiveName');
 
-console.log('funcionou');
-
 inputFile.addEventListener('change', function (event) {
   let name = this.files[0].name;
   let extension = name.split('.')

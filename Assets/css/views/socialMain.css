@@ -1,0 +1,35 @@
+main {
+  margin-left: 50px;
+  color: #e1e1e1;
+  position: relative;
+}
+
+.option_note {
+  float: right;
+  padding: 10px;
+}
+
+.option_note .newNote {
+  padding: 8px 20px;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  background: none;
+  border: 2px solid #3b7fff;
+  color: #3b7fff;
+  transition: all ease 200ms;
+  display: flex;
+  gap: 5px;
+}
+
+.option_note .newNote i {
+  font-size: 20px;
+}
+
+.option_note .newNote:hover {
+  background: #3b7fff;
+  color: #e1e1e1;
+}

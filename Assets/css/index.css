@@ -1,0 +1,30 @@
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.555);
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  opacity: 0;
+
+  transition: all ease 200ms;
+}
+
+.modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal .form {
+  max-width: 450px;
+  max-height: 550px;
+}
+
+.modal .form form {
+  background: #2c2c2c;
+  border-radius: 8px;
+}
