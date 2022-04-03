@@ -5,6 +5,7 @@
   background: #3f3f3f;
   display: flex;
   border-radius: 5px;
+  z-index: 6;
 }
 
 .menu:hover {

@@ -30,6 +30,8 @@ $router->post("/login", handler: "Router:loginPost");
 $router->get("/register", handler: "Router:register");
 $router->post("/register", handler: "Router:registerPost");
 
+$router->post("/addnode", handler: "Router:addNode");
+
 $router->group(group: 'logout');
 $router->get('/', handler: "Router:logout");
 /*

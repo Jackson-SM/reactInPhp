@@ -1,7 +1,8 @@
 main {
-  margin-left: 50px;
+  margin-left: 200px;
   color: #e1e1e1;
   position: relative;
+  z-index: 1;
 }
 
 .option_note {

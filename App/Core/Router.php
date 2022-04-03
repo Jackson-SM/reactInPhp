@@ -5,6 +5,9 @@ namespace App\Core;
 use App\Controllers\UserController;
 use App\Model\User;
 
+use App\Controllers\PostController;
+use App\Model\Post;
+
 session_start();
 
 class Router {
@@ -63,6 +66,23 @@ class Router {
     $userController = new UserController();
     $userController->logout();
     header('location: /');
+  }
+
+  public function addNode($data) {
+    $post = new Post();
+
+    $post->setTitle($data['title']);
+    $post->setContent($data['content']);
+    $post->setAuthor($data['author']);
+    $post->setIdUser($_SESSION['id_session']);
+
+    $postController = new PostController();
+    try {
+      $postController->create($post);
+      echo "Conta criada com sucesso";
+    }catch(\Exception $e) {
+      echo $e->getMessage();
+    }
   }
 
   public function error($data){
