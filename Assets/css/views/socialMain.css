@@ -1,5 +1,5 @@
 main {
-  margin-left: 200px;
+  margin-left: 60px;
   color: #e1e1e1;
   position: relative;
   z-index: 1;
@@ -8,9 +8,12 @@ main {
 .option_note {
   float: right;
   padding: 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
 
-.option_note .newNote {
+.option_note .btn_note {
   padding: 8px 20px;
   border: none;
   outline: 0;
@@ -26,11 +29,38 @@ main {
   gap: 5px;
 }
 
-.option_note .newNote i {
+.option_note .btn_note i {
   font-size: 20px;
 }
 
-.option_note .newNote:hover {
+.option_note .btn_note:hover {
   background: #3b7fff;
   color: #e1e1e1;
+}
+
+.cardPost {
+  width: 400px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.082);
+  padding: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.cardPost .title {
+  font-size: 20px;
+}
+
+.cardPost .content {
+  font-size: 14px;
+}
+
+.info_note {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
 }

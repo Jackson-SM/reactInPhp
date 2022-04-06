@@ -1,5 +1,24 @@
 <main>
   <div class="option_note">
-    <button class="newNote"><i class='bx bxs-folder-plus'></i>New Note</button>
+    <button class="btn_note newNote"><i class='bx bxs-folder-plus'></i>New Note</button>
+    <button class="btn_note newReminder"><i class='bx bxs-calendar-plus'></i>New Reminder</button>
+  </div>
+  <div class="posts">
+    {% for post in posts %}
+    <div class="cardPost">
+      <h1 class="title">{{post.title}}</h1>
+      {% if post.content|length > 400 %}
+      <p class="content">{{post.content[0:400]}}...</p>
+      {% else %}
+      <p class="content">{{post.content}}</p>
+      {% endif %}
+      <div class="info_note">
+        <span class="author">Author: {{post.author}}</span>
+        <span class="date">Postado em: {{post.date|date("d/m/Y")}}</span>
+      </div>
+    </div>
+    {% else %}
+    <h1>Não existem posts</h1>
+    {% endfor %}
   </div>
 </main>

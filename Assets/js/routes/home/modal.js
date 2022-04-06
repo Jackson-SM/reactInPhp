@@ -9,15 +9,16 @@ newNoteBtn.addEventListener('click', e => {
 modal.addEventListener('click', e => {
   e.target.classList.toggle('show');
 })
-
+  
 $(btnSubmit).on("click", e => {
   e.preventDefault();
+  modal.classList.remove('show');
     $.ajax({
       url: "/user/addnode",
       type: 'POST',
       data: $('.modal form').serialize(),
       success: function( data ) {
-        console.log(data);
+        console.log(JSON.parse(data));
       }
     })
 })

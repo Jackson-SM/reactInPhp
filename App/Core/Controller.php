@@ -2,6 +2,7 @@
 
 namespace App\Core;
 use App\Controllers\UserController;
+use App\Controllers\PostController;
 
 class Controller {
 
@@ -21,7 +22,8 @@ class Controller {
 
     echo $twig->render($page,[
       ...$params,
-      "user" => $this->verifyLogged()
+      "user" => $this->verifyLogged(),
+      "posts" => ((new PostController())->read())
     ]);
   }
 }

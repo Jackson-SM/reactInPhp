@@ -78,8 +78,7 @@ class Router {
 
     $postController = new PostController();
     try {
-      $postController->create($post);
-      echo "Conta criada com sucesso";
+      echo $postController->create($post);
     }catch(\Exception $e) {
       echo $e->getMessage();
     }
