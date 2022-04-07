@@ -69,18 +69,31 @@ class Router {
   }
 
   public function addNode($data) {
-    $post = new Post();
+    if(isset($_SESSION['id_session'])){
+      $post = new Post();
 
-    $post->setTitle($data['title']);
-    $post->setContent($data['content']);
-    $post->setAuthor($data['author']);
-    $post->setIdUser($_SESSION['id_session']);
+      $post->setTitle($data['title']);
+      $post->setContent($data['content']);
+      $post->setAuthor($data['author']);
+      $post->setIdUser($_SESSION['id_session']);
 
-    $postController = new PostController();
-    try {
-      echo $postController->create($post);
-    }catch(\Exception $e) {
-      echo $e->getMessage();
+      if(isset($data['private'])){
+        $post->setPrivate(true);
+      }else{
+        $post->setPrivate(false);
+      }
+  
+      $postController = new PostController();
+      try {
+        echo $postController->create($post);
+      }catch(\Exception $e) {
+        echo $e->getMessage();
+      }  
+    }else{
+      echo json_encode([
+        "error" => true,
+        "message" => "Você precisa estar logado para postar"
+      ]);
     }
   }
 

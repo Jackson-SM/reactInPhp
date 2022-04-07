@@ -17,7 +17,7 @@ $(btnSubmit).on("click", e => {
       url: "/user/addnode",
       type: 'POST',
       data: $('.modal form').serialize(),
-      success: function( data ) {
+      success: function(data) {
         console.log(JSON.parse(data));
       }
     })
