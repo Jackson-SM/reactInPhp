@@ -4,14 +4,14 @@ namespace App\Controllers;
 
 class PostController {
   public function create(\App\Model\Post $post){
-    $sql = "INSERT INTO posts (title,content,author,id_user,private) VALUES (:title,:content,:author,:id_user,:private)";
+    $sql = "INSERT INTO posts (title,content,author,id_user,priv) VALUES (:title,:content,:author,:id_user,:priv)";
 
     $stmt = \App\Model\Connect::getConnect()->prepare($sql);
     $stmt->bindValue(':title', $post->getTitle());
     $stmt->bindValue(':content', $post->getContent());
     $stmt->bindValue(':author', $post->getAuthor());
     $stmt->bindValue(':id_user', $post->getIdUser());
-    $stmt->bindValue(':private', $post->getPrivate());
+    $stmt->bindValue(':priv', $post->getPrivate());
 
     if($stmt->execute()){
       return json_encode([

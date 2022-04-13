@@ -69,7 +69,6 @@ class Router {
   }
 
   public function addNode($data) {
-    if(isset($_SESSION['id_session'])){
       $post = new Post();
 
       $post->setTitle($data['title']);
@@ -78,23 +77,17 @@ class Router {
       $post->setIdUser($_SESSION['id_session']);
 
       if(isset($data['private'])){
-        $post->setPrivate(true);
+        $post->setPrivate('on');
       }else{
-        $post->setPrivate(false);
+        $post->setPrivate('off');
       }
-  
-      $postController = new PostController();
+
       try {
+        $postController = new PostController();
         echo $postController->create($post);
-      }catch(\Exception $e) {
-        echo $e->getMessage();
-      }  
-    }else{
-      echo json_encode([
-        "error" => true,
-        "message" => "Você precisa estar logado para postar"
-      ]);
-    }
+      }catch(\Exception $e){
+        echo json_encode($e->getMessage());
+      }
   }
 
   public function error($data){
